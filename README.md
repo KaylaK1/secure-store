@@ -8,6 +8,12 @@ Android: Stored in SharedPreferences (2) with Android's Keystore system (3).
 
 Values greater than 2048 bytes may fail.
 
+## Installation and usage
+
+`expo install expo-secure-store`
+
+If installing in a bare React Native application (Not being managed Expo) - run `npx pod-install` for iOS configuration as well. (4)
+
 ## SecureStoreOptions
 
 https://docs.expo.dev/versions/latest/sdk/securestore/#securestoreoptions
@@ -31,12 +37,6 @@ iOS: Equivalent to `kSecAccessControlUserPresence`
 Android: Equivalent to `setUserAuthenticationRequired(true)`
 
 .... Is unlocked only with a freshly generated key? Does not work in tandem with `keychainService` value used for the others non-authenticated operations.
-
-## Installation an usage
-
-`expo install expo-secure-store`
-
-If installing in a bare React Native application (Not being managed Expo) - run `npx pod-install` for iOS configuration as well. (4)
 
 ### Sources
 
