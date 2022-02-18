@@ -8,6 +8,30 @@ Android: Stored in SharedPreferences (2) with Android's Keystore system (3).
 
 Values greater than 2048 bytes may fail.
 
+## SecureStoreOptions
+
+https://docs.expo.dev/versions/latest/sdk/securestore/#securestoreoptions
+
+An optional second argument to pass to SecureStore methods
+
+Name - Type - Description
+
+authenticationPrompt - string - custom display message while `requireAuthentication` option is turned on.
+
+keychainAccessible - `keychainAccessibilityConstant` (type: number) - (iOS only) specifies when the stored entry is accessible using iOS's kSecAttrAccessible property.
+
+keychainService - string - iOS: The item's service, equivalent to kSecAttrService
+                           Android: Equivalent of the public/private key pair Alias
+If keychainService is used to set pairs. It must be used when fetching pairs.
+
+requireAuthentication - boolean - Enables the usage of the user authentication methods available on the device while accessing data stored in SecureStore.
+
+iOS: Equivalent to `kSecAccessControlUserPresence`
+
+Android: Equivalent to `setUserAuthenticationRequired(true)`
+
+.... Is unlocked only with a freshly generated key? Does not work in tandem with `keychainService` value used for the others non-authenticated operations.
+
 ## Installation an usage
 
 `expo install expo-secure-store`

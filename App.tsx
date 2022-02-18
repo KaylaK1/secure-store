@@ -1,14 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
 import { styles } from './assets/styles';
-
-/**
- * An optional second argument to pass to SecureStore methods
- * @param SecureStoreOptions
- * authenticationPrompt - string - custom display message while requireAuthentication option is turned on.
- */
 
 /**
  * Saves the key/value pair
@@ -22,7 +15,7 @@ async function save(key: string, value: string) {
 /**
  * Fetches the stored value associated with the key
  * getItemAsync(key, SecureStoreOptions)
- * @param SecureStoreOptions - An object
+ * @param SecureStoreOptions - Optional, is an object with customization options - see readme.
  * @param key string
  * @returns Promise<string | null>
  */
